@@ -110,7 +110,7 @@ int main()
         }
         std::cout << "Cloud " <<std::to_string(i)  << " size: " << cloud->size() << std::endl;
         std::string output_name = "/output_folder/" + std::to_string(i) + ".pcd";
-        //pcl::io::savePCDFile( output_name, *cloud, true );
+        pcl::io::savePCDFile( output_name, *cloud, true );
     }
     return 0;
 }
