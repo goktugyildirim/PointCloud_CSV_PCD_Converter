@@ -109,8 +109,12 @@ int main()
             cloud->points.push_back(point);
         }
         std::cout << "Cloud " <<std::to_string(i)  << " size: " << cloud->size() << std::endl;
-        std::string output_name = "/output_folder/" + std::to_string(i) + ".pcd";
+        std::string output_name = "/home/goktug/projects/csv_to_pcd_ws/output_folder/" + std::to_string(i) + ".pcd";
+        //std::cout << "Output name: " << output_name << std::endl;
+        cloud->height = 1;
+        cloud->width = cloud->size();
         pcl::io::savePCDFile( output_name, *cloud, true );
+
     }
     return 0;
 }
